@@ -1,0 +1,9 @@
+.vercel/
+.env
+.env.*
+!.env.example
+node_modules/
+LEIA-ME.md
+hero-barista.png
+hero-barista-end-frame.png
+assets/hero-ending.jpg

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b211a">
+  <meta name="description" content="Café coado com cuidado, servido no seu tempo. Veja o cardápio e prepare sua visita.">
+  <title>Nome da Casa | Café no seu tempo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <a class="wordmark" href="#inicio" aria-label="Nome da Casa, início">
+      <svg class="wordmark-mark" viewBox="0 0 38 38" aria-hidden="true">
+        <path d="M19 3.5C14.3 11.1 7.8 17.3 7.8 23.3a11.2 11.2 0 0 0 22.4 0C30.2 17.3 23.7 11.1 19 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M12.8 24.2c.8 3.7 3.1 5.5 6.4 5.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="wordmark-text">NOME DA CASA</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#ritual">Nosso jeito</a>
+      <a href="#visita">Visite</a>
+      <a class="nav-cta" href="#cardapio">Ver o cardápio <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-label="Uma mulher prepara café coado">
+      <div class="hero-stage">
+        <img class="hero-poster" src="assets/hero-poster.jpg" alt="Mulher preparando café coado com água quente e um coador de cerâmica" fetchpriority="high">
+
+        <video class="hero-video" id="hero-video" data-available="true" data-bytes="3912307" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <svg class="hero-thread" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M1110 -20 C1070 130 1190 170 1120 300 C1065 405 1150 465 1110 600 C1080 710 1185 760 1140 920"/>
+        </svg>
+        <div class="hero-static-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Café coado, feito com calma</p>
+          <h1>Um bom café<br><em>muda o ritmo.</em></h1>
+          <p class="hero-lede">Café coado com cuidado, servido no seu tempo.</p>
+          <a class="button button-gold" href="#cardapio">Ver o cardápio <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-bands" aria-live="polite" aria-atomic="true">
+          <article class="hero-band is-active" data-band="0" aria-hidden="false">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> O ritual começa</p>
+            <h2>Tudo começa<br>com um fio d’água.</h2>
+            <p class="band-note">O primeiro aroma já pede calma.</p>
+          </article>
+          <article class="hero-band" data-band="1" aria-hidden="true">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Água e café</p>
+            <h2>Grão moído.<br>Olho atento.</h2>
+            <p class="band-note">A água passa no tempo certo.</p>
+          </article>
+          <article class="hero-band" data-band="2" aria-hidden="true">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> O aroma sobe</p>
+            <h2>Sem pressa.<br>Sem atalhos.</h2>
+            <p class="band-note">Um gole começa bem antes da xícara.</p>
+          </article>
+          <article class="hero-band" data-band="3" aria-hidden="true">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> A pausa chega</p>
+            <h2>Seu café,<br>no tempo certo.</h2>
+            <p class="band-note">Desça para escolher o próximo gole.</p>
+          </article>
+        </div>
+        <div class="hero-loader" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"></circle></svg>
+          <span class="loader-label">Preparando a cena</span>
+        </div>
+        <div class="hero-index" aria-hidden="true"><span>01</span><span class="index-line"></span><span>04</span></div>
+        <a class="scroll-cue" href="#cardapio"><span>Role no seu tempo</span><span class="scroll-cue-line"></span></a>
+      </div>
+    </section>
+
+    <section class="intro section-pad" aria-labelledby="intro-title">
+      <div class="intro-kicker reveal"><span class="mono-label">O TEMPO DA EXTRAÇÃO</span><span class="small-flower" aria-hidden="true">✳</span></div>
+      <div class="intro-grid">
+        <h2 class="display reveal" id="intro-title">O bom café não<br>apressa ninguém.</h2>
+        <div class="intro-copy reveal">
+          <p>A água passa aos poucos. O aroma chega primeiro. Por alguns minutos, a mesa é só sua.</p>
+          <a class="text-link" href="#ritual">Conheça o nosso jeito <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+      <svg class="section-doodle reveal" viewBox="0 0 1100 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M4 48 C160 48 173 22 286 40 S433 72 544 45 740 21 848 45 1018 61 1096 32"/>
+      </svg>
+    </section>
+
+    <section class="menu-section section-pad" id="cardapio" aria-labelledby="menu-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="mono-label">O QUE VAI À MESA</p>
+          <h2 class="display" id="menu-title">Um cardápio<br><em>para saborear.</em></h2>
+        </div>
+        <p class="section-aside">Cada item e valor abaixo é um campo temporário. Vamos trocar pelos dados reais da cafeteria.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-card reveal">
+          <span class="menu-number">01</span>
+          <div class="menu-art art-beans" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="mono-label">CAFÉ COADO</p>
+          <h3>Nome do café</h3>
+          <p>Descreva aqui o grão, o método e o que faz este café ser especial.</p>
+          <span class="menu-price">Preço a confirmar</span>
+        </article>
+        <article class="menu-card reveal">
+          <span class="menu-number">02</span>
+          <div class="menu-art art-cup" aria-hidden="true"><span class="cup-shape"></span><span class="cup-steam"></span></div>
+          <p class="mono-label">ESPRESSO</p>
+          <h3>Nome da bebida</h3>
+          <p>Inclua os ingredientes e as opções de preparo oferecidas pela casa.</p>
+          <span class="menu-price">Preço a confirmar</span>
+        </article>
+        <article class="menu-card reveal">
+          <span class="menu-number">03</span>
+          <div class="menu-art art-bread" aria-hidden="true"><span></span><span></span></div>
+          <p class="mono-label">PARA ACOMPANHAR</p>
+          <h3>Nome do acompanhamento</h3>
+          <p>Conte em poucas palavras o que combina com uma xícara feita na hora.</p>
+          <span class="menu-price">Preço a confirmar</span>
+        </article>
+      </div>
+      <p class="menu-disclaimer reveal">Cardápio de demonstração. Confirme itens, ingredientes e valores antes de publicar.</p>
+    </section>
+
+    <section class="ritual-section section-pad" id="ritual" aria-labelledby="ritual-title">
+      <div class="ritual-grid">
+        <div class="ritual-copy">
+          <p class="mono-label reveal">UMA PAUSA DE TRÊS SEGUNDOS</p>
+          <h2 class="display reveal" id="ritual-title">Segure.<br><em>Respire.</em></h2>
+          <p class="ritual-lede reveal">A água passa. O aroma fica. Experimente uma pequena pausa antes do próximo gole.</p>
+          <div class="ritual-action reveal">
+            <button class="brew-button" id="brew-button" type="button" aria-describedby="brew-hint" aria-label="Segure por três segundos para acompanhar a extração">
+              <span class="brew-button-fill" aria-hidden="true"></span>
+              <span class="brew-button-label">Segure para coar</span>
+              <span class="brew-arrow" aria-hidden="true">↓</span>
+            </button>
+            <p class="brew-hint" id="brew-hint">Três segundos. Sem pressa.</p>
+          </div>
+          <p class="brew-result" id="brew-result" aria-live="polite" hidden>A pausa também faz parte do café.</p>
+        </div>
+        <figure class="ritual-figure reveal">
+          <img src="assets/hero-ending.jpg" alt="Barista observa o café recém-passado em um coador de cerâmica">
+          <figcaption><span class="caption-mark" aria-hidden="true">✳</span> O cuidado mora nos detalhes.</figcaption>
+        </figure>
+      </div>
+      <div class="ritual-orbit" aria-hidden="true"><span>água</span><span>tempo</span><span>cuidado</span></div>
+    </section>
+
+    <section class="visit-section section-pad" id="visita" aria-labelledby="visit-title">
+      <div class="visit-top reveal">
+        <p class="mono-label">PLANEJE SUA VISITA</p>
+        <h2 class="display" id="visit-title">A gente se encontra<br><em>por aqui.</em></h2>
+        <p>Preencha este espaço com o endereço, os horários e o contato reais da cafeteria.</p>
+      </div>
+      <div class="visit-details reveal">
+        <div class="visit-detail"><span class="mono-label">ENDEREÇO</span><strong>Adicionar endereço</strong><span>Cidade a definir</span></div>
+        <div class="visit-detail"><span class="mono-label">HORÁRIOS</span><strong>Adicionar dias e horários</strong><span>Confirmar com a cafeteria</span></div>
+        <div class="visit-detail"><span class="mono-label">CONTATO</span><strong>Adicionar WhatsApp ou telefone</strong><span>Canal oficial do negócio</span></div>
+      </div>
+      <div class="visit-bottom reveal">
+        <span>Informações de visita a preencher antes de compartilhar.</span>
+        <a class="button button-outline" href="#cardapio">Ver o cardápio <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="faq-section section-pad" aria-labelledby="faq-title">
+      <div class="faq-intro reveal">
+        <p class="mono-label">ANTES DE VIR</p>
+        <h2 class="display" id="faq-title">Dúvidas<br><em>de mesa.</em></h2>
+      </div>
+      <div class="faq-list reveal">
+        <details>
+          <summary>Quais cafés estão no cardápio?<span aria-hidden="true">+</span></summary>
+          <p>Os nomes, ingredientes e valores reais ainda precisam ser preenchidos. Os cartões desta página são exemplos editáveis.</p>
+        </details>
+        <details>
+          <summary>Tem opção sem leite?<span aria-hidden="true">+</span></summary>
+          <p>Confirme com a equipe quais bebidas podem ser feitas sem leite e quais alternativas estão disponíveis.</p>
+        </details>
+        <details>
+          <summary>Onde fica a cafeteria?<span aria-hidden="true">+</span></summary>
+          <p>Adicione o endereço completo e a cidade nesta seção antes de compartilhar o site.</p>
+        </details>
+        <details>
+          <summary>Posso pedir para levar?<span aria-hidden="true">+</span></summary>
+          <p>Inclua aqui o canal oficial de pedidos e os prazos depois de confirmar como a casa atende.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing-section section-pad" aria-labelledby="closing-title">
+      <div class="closing-thread" aria-hidden="true"><span></span></div>
+      <p class="mono-label reveal">UM BOM CAFÉ ENCONTRA O SEU TEMPO</p>
+      <h2 class="display reveal" id="closing-title">Escolha o próximo<br><em>gole.</em></h2>
+      <a class="button button-gold reveal" href="#cardapio">Ver o cardápio <span aria-hidden="true">↗</span></a>
+      <p class="closing-note reveal">Os dados reais da cafeteria entram aqui quando você os definir.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="#inicio">
+      <svg class="wordmark-mark" viewBox="0 0 38 38" aria-hidden="true">
+        <path d="M19 3.5C14.3 11.1 7.8 17.3 7.8 23.3a11.2 11.2 0 0 0 22.4 0C30.2 17.3 23.7 11.1 19 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M12.8 24.2c.8 3.7 3.1 5.5 6.4 5.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="wordmark-text">NOME DA CASA</span>
+    </a>
+    <p>Feito no seu tempo.</p>
+    <p class="footer-note">Imagens provisórias geradas por IA. Trocar por fotos reais antes de publicar.</p>
+    <a class="back-top" href="#topo">Voltar ao início ↑</a>
+  </footer>
+</body>
+</html>
