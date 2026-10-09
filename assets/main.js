@@ -65,7 +65,7 @@
 
   function requestSeek(time) {
     if (!video.duration || !Number.isFinite(video.duration) || video.readyState < 2) return;
-    const safeTime = Math.max(0, Math.min(video.duration - .04, time));
+    const safeTime = Math.max(0, Math.min(video.duration - .12, time));
     if (seekBusy) {
       pendingTime = safeTime;
       return;
@@ -84,7 +84,7 @@
     const scrubbing = hero.classList.contains('is-scrubbing');
     const finalFrameReady = target >= 1 && shown >= .9995 && !seekBusy &&
       video.readyState >= 2 && Number.isFinite(video.duration) &&
-      video.currentTime >= video.duration - .1;
+      video.currentTime >= video.duration - .15;
     header.classList.toggle('is-hero-hidden', scrubbing && !finalFrameReady);
   }
 
@@ -94,7 +94,6 @@
       const next = pendingTime;
       pendingTime = null;
       requestSeek(next);
-      return;
     }
     syncHeroHeader();
   });
