@@ -80,13 +80,23 @@
     }
   }
 
+  function syncHeroHeader() {
+    const scrubbing = hero.classList.contains('is-scrubbing');
+    const finalFrameReady = target >= 1 && shown >= .9995 && !seekBusy &&
+      video.readyState >= 2 && Number.isFinite(video.duration) &&
+      video.currentTime >= video.duration - .1;
+    header.classList.toggle('is-hero-hidden', scrubbing && !finalFrameReady);
+  }
+
   video.addEventListener('seeked', () => {
     seekBusy = false;
     if (pendingTime !== null) {
       const next = pendingTime;
       pendingTime = null;
       requestSeek(next);
+      return;
     }
+    syncHeroHeader();
   });
   video.addEventListener('error', () => {
     seekBusy = false;
@@ -108,12 +118,18 @@
     }
     if (hero.classList.contains('is-scrubbing')) requestSeek(shown * video.duration);
     updateHero(shown);
+    syncHeroHeader();
   }
 
   function onScroll() {
     header.classList.toggle('is-scrolled', window.scrollY > 40);
-    if (!hero.classList.contains('is-scrubbing')) return;
+    const scrubbing = hero.classList.contains('is-scrubbing');
+    if (!scrubbing) {
+      syncHeroHeader();
+      return;
+    }
     target = heroProgress();
+    syncHeroHeader();
     if (heroOnScreen && rafId === null) rafId = requestAnimationFrame(tick);
   }
 
@@ -132,6 +148,7 @@
     target = 0;
     shown = 0;
     updateHero(0);
+    onScroll();
   }
 
   async function loadHeroBlob() {
@@ -179,7 +196,7 @@
       shown = target;
       updateHero(shown);
       requestSeek(shown * video.duration);
-      if (heroOnScreen) onScroll();
+      onScroll();
     }, { once: true });
     } catch (error) {
       window.clearTimeout(watchdog);
@@ -210,6 +227,7 @@
     }
     fetchStarted = true;
     hero.classList.add('is-loading', 'is-scrubbing');
+    onScroll();
     loadHeroBlob().catch(failVideo);
   }
 
