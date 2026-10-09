@@ -8,7 +8,8 @@
   <title>Nome da Casa | Café no seu tempo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-poster.jpg" fetchpriority="high">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/main.js" defer></script>
 </head>
@@ -37,7 +38,7 @@
   <main id="conteudo">
     <section class="hero" id="inicio" aria-label="Uma mulher prepara café coado">
       <div class="hero-stage">
-        <img class="hero-poster" src="assets/hero-poster.jpg" alt="Mulher preparando café coado com água quente e um coador de cerâmica" fetchpriority="high">
+        <img class="hero-poster" src="assets/hero-poster.jpg" alt="Mulher preparando café coado com água quente e um coador de cerâmica" width="1600" height="900" loading="eager" decoding="async" fetchpriority="high">
 
         <video class="hero-video" id="hero-video" data-available="true" data-bytes="3912307" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
         <div class="hero-shade" aria-hidden="true"></div>
@@ -149,7 +150,7 @@
           <p class="brew-result" id="brew-result" aria-live="polite" hidden>A pausa também faz parte do café.</p>
         </div>
         <figure class="ritual-figure reveal">
-          <img src="assets/hero-ending.jpg" alt="Barista observa o café recém-passado em um coador de cerâmica">
+          <img src="assets/hero-ending.jpg" alt="Barista observa o café recém-passado em um coador de cerâmica" width="1280" height="720" loading="lazy" decoding="async" fetchpriority="low">
           <figcaption><span class="caption-mark" aria-hidden="true">✳</span> O cuidado mora nos detalhes.</figcaption>
         </figure>
       </div>

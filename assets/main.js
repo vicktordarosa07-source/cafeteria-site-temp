@@ -12,6 +12,7 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobileGate = window.matchMedia('(max-width: 767px)');
   const heroVideoUrl = 'assets/hero-scrub.mp4';
+  const heroPoster = document.querySelector('.hero-poster');
 
   let heroOnScreen = true;
   let rafId = null;
@@ -23,6 +24,8 @@
   let currentBand = -1;
   let blobUrl = null;
   let fetchStarted = false;
+  let posterReady = false;
+  let loadScheduled = false;
   let currentProgress = -1;
 
   function heroProgress() {
@@ -135,7 +138,7 @@
     const controller = new AbortController();
     let watchdog = window.setTimeout(() => controller.abort(), 20000);
     try {
-    const response = await fetch(heroVideoUrl, { signal: controller.signal, cache: 'force-cache' });
+    const response = await fetch(heroVideoUrl, { signal: controller.signal, cache: 'force-cache', priority: 'low' });
     if (!response.ok || !response.body) throw new Error('Vídeo indisponível');
     const contentLength = Number(response.headers.get('Content-Length')) || 0;
     const fallbackBytes = Number(video.dataset.bytes) || 0;
@@ -184,8 +187,19 @@
     }
   }
 
+  function scheduleHeroLoad() {
+    if (fetchStarted || loadScheduled || mobileGate.matches || prefersReduced.matches || !posterReady) return;
+    loadScheduled = true;
+    const start = () => {
+      loadScheduled = false;
+      maybeLoadHero();
+    };
+    if ('requestIdleCallback' in window) window.requestIdleCallback(start, { timeout: 1800 });
+    else window.setTimeout(start, 700);
+  }
+
   function maybeLoadHero() {
-    if (fetchStarted || mobileGate.matches || prefersReduced.matches || !('fetch' in window)) return;
+    if (fetchStarted || mobileGate.matches || prefersReduced.matches || !posterReady || !('fetch' in window)) return;
     if (video.dataset.available !== 'true') {
       failVideo();
       return;
@@ -218,7 +232,20 @@
     if (mobileGate.matches) failVideo();
     else maybeLoadHero();
   });
-  maybeLoadHero();
+  function onHeroPosterReady() {
+    if (posterReady) return;
+    posterReady = true;
+    scheduleHeroLoad();
+  }
+  if (heroPoster?.complete) onHeroPosterReady();
+  else if (heroPoster) {
+    heroPoster.addEventListener('load', onHeroPosterReady, { once: true });
+    heroPoster.addEventListener('error', onHeroPosterReady, { once: true });
+    window.setTimeout(onHeroPosterReady, 4000);
+  } else {
+    posterReady = true;
+    scheduleHeroLoad();
+  }
 
   // Reveal each lower-page moment as it enters view, then let it rest.
   const revealObserver = new IntersectionObserver((entries) => {
