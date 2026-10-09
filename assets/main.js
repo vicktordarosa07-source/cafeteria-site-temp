@@ -130,7 +130,7 @@
     }
     target = heroProgress();
     syncHeroHeader();
-    if (heroOnScreen && rafId === null) rafId = requestAnimationFrame(tick);
+    if ((heroOnScreen || target >= 1) && rafId === null) rafId = requestAnimationFrame(tick);
   }
 
   function failVideo() {
